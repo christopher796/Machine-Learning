@@ -1,0 +1,9 @@
+import numpy
+import matplotlib.pyplot as plt
+
+x = numpy.random.uniform(0.0, 1.0, 1000)
+
+plt.hist(x, 100)
+
+plt.show()
+
