@@ -4,16 +4,21 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 from sklearn.impute import SimpleImputer
 
+# Save file path
 file_path = "melb_data.csv"
 
+# Read the data and store in dataframe called missing_dataset
 missing_dataset = pd.read_csv(file_path)
 
+# Target
 y = missing_dataset.Price
 
 melb_preds = missing_dataset.drop(['Price'], axis = 1)
 
+# Features
 X = melb_preds.select_dtypes(exclude=['object'])
 
+# Train Test Split
 X_train, X_val, y_train, y_val = train_test_split(X, y, train_size = 0.8, test_size = 0.2, random_state = 0)
 
 # Function to compare different approaches to deal with missing values
