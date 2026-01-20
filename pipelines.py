@@ -7,11 +7,14 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 
+# Save file path
 file_path = "melb_data.csv"
-
+# Read data and store in dataset
 dataset = pd.read_csv(file_path)
 
+# Target
 y = dataset.Price
+# Features
 X = dataset.drop(['Price'], axis = 1)
 
 X_train_full, X_valid_full, y_train, y_valid = train_test_split(X, y, train_size=0.8, test_size=0.2, random_state=0)
